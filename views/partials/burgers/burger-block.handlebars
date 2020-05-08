@@ -1,4 +1,4 @@
-<li>
+<li class="list-group-item">
 	{{burger_name}}
 
 	{{#if devoured}}
@@ -6,7 +6,9 @@
 		DEVOUR ME!
 	</button>
 	{{/if}}
-	{{!-- <button class="delete-cat" data-id="{{id}}"> 
+	{{#unless devoured}}
+	<button class="delete-burger" data-id="{{id}}"> 
 		Delete
-	</button> --}}
+	</button>
+	{{/unless}}
 </li>

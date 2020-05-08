@@ -20,7 +20,20 @@ $(function () {
         }
       );
     });
+
+    $(".delete-burger").on("click", function (event) {
+      let id = $(this).data("id");
   
+      $.ajax("/api/burgers/" + id, {
+        type: "DELETE"
+      }).then(
+        function () {
+          console.log("deleted burger id: ", id);
+          location.reload();
+        }
+      );
+  
+    });
   
     $(".create-form").on("submit", function (event) {
       // Make sure to preventDefault on a submit event.

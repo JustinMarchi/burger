@@ -1,4 +1,4 @@
-<h1>Burgers!</h1>
+<h1>Eat Da Burger!</h1>
 
 <h2>Add a Burger</h2>
 <form class="create-form">
@@ -13,7 +13,7 @@
 
 <h2>Burgers that haven't been devoured</h2>
 
-<ul>
+<ul class="list-group">
     {{#each burgers}}
     {{#unless devoured}}
     {{> burgers/burger-block devoured=true}}
@@ -23,7 +23,7 @@
 
 <h2>Burgers that have been devoured</h2>
 
-<ul>
+<ul class="list-group">
     {{#each burgers}}
     {{#if devoured}}
     {{> burgers/burger-block devoured=false}}
