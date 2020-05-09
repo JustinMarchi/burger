@@ -2,6 +2,17 @@
 const mysql = require("mysql");
 const dotenv = require("dotenv").config();
 
+if(process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  connection = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "Vermont#1",
+    database: "burgers_db"
+  });
+};
+
 const connection = mysql.createConnection({
   host: process.env.DB_HOST,
   port: 3306,
